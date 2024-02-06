@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="img/icon.png" />
+    <title>Encriptador de texto - Alura Challenge ONE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="alert" id="miAlerta">
+      <span class="closebtn" onclick="cerrarAlerta()">&times;</span>
+      No es posible usar caracteres que no sean letras minúsculas!
+    </div>
+
+    <header>
+      <a
+        href="https://app.aluracursos.com/user/eduardoreyes55"
+        target="_blank"
+      >
+        <h2>Encriptador de texto</h2>
+      </a>
+
+    </header>
+
+    <main>
+      <div id="col1">
+        <textarea
+          placeholder="Ingrese el texto aquí"
+          id="cadena"
+          onchange="estadoBoton(this.value)"
+          onkeyup="estadoBoton(this.value)"
+          oninput="validar(this.value)"
+        ></textarea>
+        <small>
+          🛈 Solo letras minúsculas y sin acentos, favor de no agregar caracteres
+          especiales.</small
+        >
+        <div id="cont-botones">
+          <button id="boton1" class="boton" disabled onclick="encriptar()">
+            Encriptar
+          </button>
+          <button id="boton2" class="boton" disabled onclick="desencriptar()">
+            Desencriptar
+          </button>
+        </div>
+      </div>
+
+      <div class="container-col2">
+        <div id="col2">
+          <div id="resultado">
+            <div class="ocultar" id="content-resultado">
+              <div class="mostrar-resultado">
+                <p class="texto-principal">El texto:</p>
+                <p id="titulo-resultado"></p>
+                <p id="tipoFuncion" class="texto-principal"></p>
+                <p class="texto-principal" id="texto-resultado"></p>
+              </div>
+              <div class="cont-boton-copiar">
+                <button onclick="copiarContenido()" id="boton-copiar">
+                  Copiar resultado
+                </button>
+                <span id="aviso-copiado" class="ocultar" style="color: #40d438">
+                  ✓ El resultado se copio a el portapapeles
+                </span>
+              </div>
+            </div>
+            <div id="cont-ocultar">
+              <div class="box-img">
+                <img
+                  src="img/doll.svg"
+                  alt="doll"
+                />
+              </div>
+        
+              <p>Ningun mensaje fue encontrado</p>
+              <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Lalo Rys</p>
+      <p>Copyright © 2024. All rights are reserved</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
